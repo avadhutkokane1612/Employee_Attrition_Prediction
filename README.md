@@ -68,3 +68,9 @@ Employee_Attrition_Prediction
 
 ### Feature Importance
 ![Feature Importance](screenshots/feature_importance.png)
+
+## Live Demo
+
+You can access the deployed application here:
+
+https://employee-attrition-prediction-1-y2n4.onrender.com
