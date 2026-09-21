@@ -51,3 +51,20 @@ Accuracy: 88.78%
 ## Project Structure
 
 Employee_Attrition_Prediction
+
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/home_page.png)
+
+### Prediction Result
+![Prediction Result](screenshots/prediction_result.png)
+
+### Model Accuracy Comparison
+![Accuracy Graph](screenshots/accuracy_graph.png)
+
+### Confusion Matrix
+![Confusion Matrix](screenshots/confusion_matrix.png)
+
+### Feature Importance
+![Feature Importance](screenshots/feature_importance.png)

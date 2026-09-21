@@ -3,66 +3,8 @@
 <head>
     <title>Employee Attrition Prediction</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #eef2f7;
-            margin: 0;
-        }
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-        .header {
-            background: #1f4e79;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .container {
-            width: 600px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        label {
-            font-weight: bold;
-            display: block;
-            margin-top: 12px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            margin-top: 25px;
-            padding: 12px;
-            background: #1f4e79;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        .result {
-            margin-top: 25px;
-            padding: 15px;
-            background: #e8f5e9;
-            text-align: center;
-            border-radius: 8px;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -72,77 +14,79 @@
     <p>Machine Learning Based Prediction System</p>
 </div>
 
+
 <div class="container">
 
 <form action="/predict" method="POST">
 
-
 <label>Age</label>
-<input type="number" name="Age" required>
+<input type="number" name="Age" min="18" max="65" required>
 
 
 <label>Business Travel</label>
 <select name="BusinessTravel">
-<option value="Travel_Rarely">Travel Rarely</option>
-<option value="Travel_Frequently">Travel Frequently</option>
-<option value="Non-Travel">Non Travel</option>
+    <option value="Travel_Rarely">Travel Rarely</option>
+    <option value="Travel_Frequently">Travel Frequently</option>
+    <option value="Non-Travel">Non Travel</option>
 </select>
 
 
 <label>Daily Rate</label>
-<input type="number" name="DailyRate" required>
+<input type="number" name="DailyRate" min="0" required>
 
 
 <label>Department</label>
 <select name="Department">
-<option value="Sales">Sales</option>
-<option value="Research & Development">Research & Development</option>
-<option value="Human Resources">Human Resources</option>
+    <option value="Sales">Sales</option>
+    <option value="Research & Development">Research & Development</option>
+    <option value="Human Resources">Human Resources</option>
 </select>
 
 
 <label>Distance From Home</label>
-<input type="number" name="DistanceFromHome" required>
+<input type="number" name="DistanceFromHome" min="0" required>
 
 
 <label>Education</label>
-<input type="number" name="Education" required>
+<input type="number" name="Education" min="1" max="5" required>
 
 
 <label>Education Field</label>
 <select name="EducationField">
-<option value="Life Sciences">Life Sciences</option>
-<option value="Medical">Medical</option>
-<option value="Marketing">Marketing</option>
-<option value="Technical Degree">Technical Degree</option>
-<option value="Other">Other</option>
-<option value="Human Resources">Human Resources</option>
+    <option value="Life Sciences">Life Sciences</option>
+    <option value="Medical">Medical</option>
+    <option value="Marketing">Marketing</option>
+    <option value="Technical Degree">Technical Degree</option>
+    <option value="Other">Other</option>
+    <option value="Human Resources">Human Resources</option>
 </select>
 
 
 <label>Employee Number</label>
-<input type="number" name="EmployeeNumber" required>
+<input type="number" name="EmployeeNumber" min="0" required>
 
 
 <label>Environment Satisfaction</label>
-<input type="number" name="EnvironmentSatisfaction" required>
+<input type="number" name="EnvironmentSatisfaction" min="1" max="4" required>
 
 
 <label>Gender</label>
 <select name="Gender">
-<option value="Male">Male</option>
-<option value="Female">Female</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
 </select>
+
+
 <label>Hourly Rate</label>
-<input type="number" name="HourlyRate" required>
+<input type="number" name="HourlyRate" min="0" required>
 
 
 <label>Job Involvement</label>
-<input type="number" name="JobInvolvement" required>
+<input type="number" name="JobInvolvement" min="1" max="4" required>
 
 
 <label>Job Level</label>
-<input type="number" name="JobLevel" required>
+<input type="number" name="JobLevel" min="1" max="5" required>
 
 
 <label>Job Role</label>
@@ -160,7 +104,7 @@
 
 
 <label>Job Satisfaction</label>
-<input type="number" name="JobSatisfaction" required>
+<input type="number" name="JobSatisfaction" min="1" max="4" required>
 
 
 <label>Marital Status</label>
@@ -172,15 +116,15 @@
 
 
 <label>Monthly Income</label>
-<input type="number" name="MonthlyIncome" required>
+<input type="number" name="MonthlyIncome" min="0" required>
 
 
 <label>Monthly Rate</label>
-<input type="number" name="MonthlyRate" required>
+<input type="number" name="MonthlyRate" min="0" required>
 
 
 <label>Num Companies Worked</label>
-<input type="number" name="NumCompaniesWorked" required>
+<input type="number" name="NumCompaniesWorked" min="0" required>
 
 
 <label>Over Time</label>
@@ -191,47 +135,47 @@
 
 
 <label>Percent Salary Hike</label>
-<input type="number" name="PercentSalaryHike" required>
+<input type="number" name="PercentSalaryHike" min="0" required>
 
 
 <label>Performance Rating</label>
-<input type="number" name="PerformanceRating" required>
+<input type="number" name="PerformanceRating" min="1" max="5" required>
 
 
 <label>Relationship Satisfaction</label>
-<input type="number" name="RelationshipSatisfaction" required>
+<input type="number" name="RelationshipSatisfaction" min="1" max="4" required>
 
 
 <label>Stock Option Level</label>
-<input type="number" name="StockOptionLevel" required>
+<input type="number" name="StockOptionLevel" min="0" required>
 
 
 <label>Total Working Years</label>
-<input type="number" name="TotalWorkingYears" required>
+<input type="number" name="TotalWorkingYears" min="0" required>
 
 
 <label>Training Times Last Year</label>
-<input type="number" name="TrainingTimesLastYear" required>
+<input type="number" name="TrainingTimesLastYear" min="0" required>
 
 
 <label>Work Life Balance</label>
-<input type="number" name="WorkLifeBalance" required>
+<input type="number" name="WorkLifeBalance" min="1" max="4" required>
 
 
 <label>Years At Company</label>
-<input type="number" name="YearsAtCompany" required>
+<input type="number" name="YearsAtCompany" min="0" required>
 
 
 <label>Years In Current Role</label>
-<input type="number" name="YearsInCurrentRole" required>
+<input type="number" name="YearsInCurrentRole" min="0" required>
 
 
 <label>Years Since Last Promotion</label>
-<input type="number" name="YearsSinceLastPromotion" required>
+<input type="number" name="YearsSinceLastPromotion" min="0" required>
 
 
 <label>Years With Current Manager</label>
-<input type="number" name="YearsWithCurrManager" required>
+<input type="number" name="YearsWithCurrManager" min="0" required>
 
 
 <button type="submit">
